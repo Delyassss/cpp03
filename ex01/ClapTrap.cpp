@@ -14,25 +14,27 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : health(10), energy(10), damage(0)
+ClapTrap::ClapTrap() : Name("Default") , health(10), energy(10), damage(0) 
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name):Name(name),health(10),energy(10),damage(0)
 {
-    std::cout << "Parametric constructor called" << std::endl;
+    std::cout << "ClapTrap Parametric constructor called" << std::endl;
 }
+
 ClapTrap::ClapTrap(std::string name, int hp, int en, int ad ):Name(name),health(hp),energy(en),damage(ad)
 {
-    std::cout << "Parametric constructor 2 called" << std::endl;
+    std::cout << "ClapTrap Parametric constructor 2 called" << std::endl;
 }
-ClapTrap & ClapTrap::operator=(const ClapTrap &src)
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     if (this != &src)
     {
         this->Name = src.Name;
@@ -42,9 +44,10 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &src)
     }
     return *this;
 }
+
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
     if (this != &src)
     {
         *this = src;

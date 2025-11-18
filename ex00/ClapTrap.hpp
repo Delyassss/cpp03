@@ -33,13 +33,6 @@ class ClapTrap
          ClapTrap(std::string name);
          ClapTrap(const ClapTrap &src);
          ClapTrap & operator=(const ClapTrap &src);
-
-
-
-
-
-
-
 };
 
 #endif
