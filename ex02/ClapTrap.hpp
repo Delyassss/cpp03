@@ -19,7 +19,7 @@
 
 class ClapTrap
 {
-    private :
+    protected :
         std::string Name;
         int health;
         int energy;
