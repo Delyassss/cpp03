@@ -52,7 +52,7 @@ ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap()
     std::cout << "ScavTrap " << getName() << " Copy constructor called" << std::endl;
     if (this != &src)
     {
-    *this = src;
+        *this = src;
     }
 }
 

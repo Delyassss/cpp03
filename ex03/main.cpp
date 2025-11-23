@@ -17,7 +17,7 @@
 
 int main()
 {
-    FragTrap d;
+    FragTrap d("FunBot");
     DiamondTrap e("DiamondBot");
     e.attack("FunBot");
     e.whoAmI();
