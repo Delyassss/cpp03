@@ -48,10 +48,8 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
     std::cout << "ClapTrap Copy constructor called" << std::endl;
-    if (this != &src)
-    {
         *this = src;
-    }
+
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -89,7 +87,6 @@ void ClapTrap::beRepaired(unsigned int amount)
     energy--;
 }
 
-//getters and setters
 void ClapTrap::setHealth(int hp)
 {
     health = hp;

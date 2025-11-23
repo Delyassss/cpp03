@@ -14,22 +14,22 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() , classname("DiamondTrap")
 {
-    setHealth(FragTrap::getHealth());
-    setEnergy(ScavTrap::getEnergy());
-    setDamage(FragTrap::getDamage());
+    setHealth(100);
+    setEnergy(50);
+    setDamage(30);
     std::cout << "DiamondTrap Default constructor called" << std::endl;
 }
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "DiamondTrap Destructor called" << std::endl;
 }
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
     classname = "DiamondTrap";
-    Name = name;
-    setHealth(FragTrap::getHealth());
-    setEnergy(ScavTrap::getEnergy());
-    setDamage(FragTrap::getDamage());
+    this->_name = name;
+    setHealth(100);
+    setEnergy(50);
+    setDamage(30);
     std::cout << "DiamondTrap Parameterized constructor called" << std::endl;
 }
 
@@ -39,13 +39,13 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src) :ClapTrap(src.getName()),  Scav
     std::cout << "DiamondTrap Copy constructor called" << std::endl;
     *this = src;
 }
-DiamondTrap & DiamondTrap::operator=(const DiamondTrap &src)
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 {
     std::cout << "DiamondTrap Copy assignment operator called" << std::endl;
     if (this != &src)
     {
         classname = src.classname;
-        setName(classname);
+        setName(src._name);
         setHealth(src.getHealth());
         setEnergy(src.getEnergy());
         setDamage(src.getDamage());
@@ -59,5 +59,5 @@ void DiamondTrap::attack(const std::string& target)
 }
 void DiamondTrap::whoAmI()
 {
-    std::cout << "DiamondTrap name: " << Name << ", ClapTrap name: " << ScavTrap::getName() << std::endl;
+    std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::getName() << std::endl;
 }

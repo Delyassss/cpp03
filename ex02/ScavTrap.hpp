@@ -20,8 +20,6 @@ class ScavTrap : public ClapTrap
     public:
         void guardGate();
         void attack(const std::string &target);
-        void beRepaired(unsigned int amount);
-        void takeDamage(unsigned int amount);
         ScavTrap();
         ~ScavTrap();
         ScavTrap(std::string name);

@@ -47,10 +47,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
     std::cout << "ClapTrap Copy constructor called" << std::endl;
-    if (this != &src)
-    {
-        *this = src;
-    }
+    *this = src;
 }
 
 void ClapTrap::attack(const std::string &target)

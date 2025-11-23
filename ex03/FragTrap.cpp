@@ -27,7 +27,6 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    setName(name);
     setHealth(100);
     setEnergy(100);
     setDamage(30);

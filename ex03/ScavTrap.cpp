@@ -22,12 +22,11 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    setName(name);
     setHealth(100);
     setEnergy(50);
     setDamage(20);
 
-    std::cout << "ScavTrap " << getName() << "Parametric constructor called" << std::endl;
+    std::cout << "ScavTrap " << getName() << " Parametric constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()

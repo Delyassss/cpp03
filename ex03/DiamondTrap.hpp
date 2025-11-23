@@ -20,7 +20,7 @@
 class DiamondTrap : public ScavTrap, public FragTrap 
 {
     private :
-        std::string Name;
+        std::string _name;
     public :
         DiamondTrap();
         ~DiamondTrap();

@@ -20,7 +20,7 @@
 class ClapTrap
 {
     private :
-        std::string Name;
+        std::string _name;
         int health;
         int energy;
         int damage;

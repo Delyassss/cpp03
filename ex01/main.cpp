@@ -16,21 +16,12 @@
 int main()
 {
     ClapTrap a("RobotA");
-    ClapTrap b("RobotB");
-
-    a.attack("RobotB");
-    b.takeDamage(0);
-    b.beRepaired(5);
-    b.attack("RobotA");
-    a.takeDamage(0);
-    a.beRepaired(3);
     ScavTrap c("GuardBot");
     c.attack("RobotA");
     a.takeDamage(20);
     a.takeDamage(5);
     a.beRepaired(10);
     c.guardGate();
-
     return 0;
 
 }

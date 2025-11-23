@@ -15,7 +15,7 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : Name("Default"), health(10), energy(10), damage(0) , classname("ClapTrap")
+ClapTrap::ClapTrap() : _name("Default"), health(10), energy(10), damage(0) , classname("ClapTrap")
 {
     std::cout << "ClapTrap Default constructor called" << std::endl;
 }
@@ -23,11 +23,11 @@ ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap Destructor called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name):Name(name),health(10),energy(10),damage(0), classname("ClapTrap")
+ClapTrap::ClapTrap(std::string name):_name(name),health(10),energy(10),damage(0), classname("ClapTrap")
 {
     std::cout << "ClapTrap Parametric constructor called" << std::endl;
 }
-ClapTrap::ClapTrap(std::string name, int hp, int en, int ad ):Name(name),health(hp),energy(en),damage(ad), classname("ClapTrap")
+ClapTrap::ClapTrap(std::string name, int hp, int en, int ad ):_name(name),health(hp),energy(en),damage(ad), classname("ClapTrap")
 {
     std::cout << "ClapTrap Parametric constructor 2 called" << std::endl;
 }
@@ -37,7 +37,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &src)
     if (this != &src)
     {
         classname = src.classname;
-        this->Name = src.Name;
+        this->_name = src._name;
         this->health = src.health;
         this->energy = src.energy;
         this->damage = src.damage;
@@ -57,10 +57,10 @@ void ClapTrap::attack(const std::string &target)
 {
     if (health <= 0 || energy <= 0)
     {
-        std::cout << classname  << " " << Name << " cannot attack." << std::endl;
+        std::cout << classname  << " " << _name << " cannot attack." << std::endl;
         return;
     }
-    std::cout << classname  << " " << Name << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+    std::cout << classname  << " " << _name << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
     energy--;
 }
 
@@ -68,10 +68,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (health <= 0)
     {
-        std::cout << classname  << " " << Name << " is already dead." << std::endl;
+        std::cout << classname  << " " << _name << " is already dead." << std::endl;
         return;
     }
-    std::cout << classname  << " " << Name << " takes " << amount << " points of damage!" << std::endl;
+    std::cout << classname  << " " << _name << " takes " << amount << " points of damage!" << std::endl;
     health -= amount;
     if (health < 0)
         health = 0;
@@ -80,10 +80,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if (health <= 0 || energy <= 0)
     {
-        std::cout << classname  << " " << Name << " cannot be repaired." << std::endl;
+        std::cout << classname  << " " << _name << " cannot be repaired." << std::endl;
         return;
     }
-    std::cout << classname  << " " << Name << " is repaired by " << amount << " points!" << std::endl;
+    std::cout << classname  << " " << _name << " is repaired by " << amount << " points!" << std::endl;
     health += amount;
     energy--;
 }
@@ -103,7 +103,7 @@ void ClapTrap::setDamage(int ad)
 }
 void ClapTrap::setName(std::string name)
 {
-    Name = name;
+    _name = name;
 }
 int ClapTrap::getHealth() const
 {
@@ -115,7 +115,7 @@ int ClapTrap::getEnergy() const
 }
 std::string ClapTrap::getName() const
 {
-    return Name;
+    return _name;
 }
 int ClapTrap::getDamage() const
 {
